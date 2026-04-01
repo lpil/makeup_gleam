@@ -1,22 +1,40 @@
-# MakeupErlang
+# MakeupGleam
 
-[![CI](https://github.com/elixir-makeup/makeup_erlang/actions/workflows/ci.yml/badge.svg)](https://github.com/elixir-makeup/makeup_erlang/actions/workflows/ci.yml)
-[![Module Version](https://img.shields.io/hexpm/v/makeup_erlang.svg)](https://hex.pm/packages/makeup_erlang)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/makeup_erlang)
+[![CI](https://github.com/lpil/makeup_gleam/actions/workflows/ci.yml/badge.svg)](https://github.com/lpil/makeup_gleam/actions/workflows/ci.yml)
+[![Module Version](https://img.shields.io/hexpm/v/makeup_gleam.svg)](https://hex.pm/packages/makeup_gleam)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/makeup_gleam)
 
-A [Makeup](https://github.com/elixir-makeup/makeup/) lexer for the `Erlang` language.
+A [Makeup](https://github.com/elixir-makeup/makeup/) lexer for the `Gleam` language.
 
 ## Installation
 
-Add `makeup_erlang` to your list of dependencies in `mix.exs`:
+Add `makeup_gleam` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:makeup_erlang, "~> 1.0"}
+    {:makeup_gleam, ">= 1.0.0 and < 2.0.0"}
   ]
 end
 ```
 
-The lexer will automatically register itself with `Makeup` for the languages `erlang` and `erl`
-as well as the extensions `.erl`, `.hrl` and `.escript`.
+The lexer will automatically register itself with `Makeup` for the language `gleam`
+as well as the extension `.gleam`.
+
+## History
+
+This package was based off of the [MakeupElixir](https://github.com/elixir-makeup/makeup_erlang)
+package, thank you to the original contributors:
+
+- Ang
+- José Valim
+- Josh Price
+- Kian-Meng Ang
+- Lukas Backström
+- Lukas Larsson
+- Marcos Ferreira
+- sir fish
+- tmbb
+- Wojtek Mach
+
+LLM assistance was used in the creation of this package.

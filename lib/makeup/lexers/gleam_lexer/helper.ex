@@ -1,26 +1,10 @@
-defmodule Makeup.Lexers.ErlangLexer.Helper do
+defmodule Makeup.Lexers.GleamLexer.Helper do
   @moduledoc false
   import NimbleParsec
   alias Makeup.Lexer.Combinators
 
   def with_optional_separator(combinator, separator) when is_binary(separator) do
     combinator |> repeat(string(separator) |> concat(combinator))
-  end
-
-  def sigil(ldelim, rdelim, nil, middle) do
-    lookahead_string(
-      string("~") |> string(ldelim),
-      string(rdelim),
-      middle
-    )
-  end
-
-  def sigil(ldelim, rdelim, ranges, middle) do
-    lookahead_string(
-      string("~") |> utf8_char(ranges) |> string(ldelim),
-      string(rdelim),
-      middle
-    )
   end
 
   def lookahead_string(left, right, middle) do

@@ -1,18 +1,18 @@
-defmodule MakeupErlang.Mixfile do
+defmodule MakeupGleam.Mixfile do
   use Mix.Project
 
-  @version "1.0.3"
-  @url "https://github.com/elixir-makeup/makeup_erlang"
+  @version "1.0.0"
+  @url "https://github.com/lpil/makeup_gleam"
 
   def project do
     [
-      app: :makeup_erlang,
+      app: :makeup_gleam,
       version: @version,
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
-      name: "Makeup Erlang",
+      name: "Makeup Gleam",
       description: description(),
       aliases: [docs: &build_docs/1]
     ]
@@ -20,22 +20,21 @@ defmodule MakeupErlang.Mixfile do
 
   defp description do
     """
-    Erlang lexer for the Makeup syntax highlighter.
+    Gleam lexer for the Makeup syntax highlighter.
     """
   end
 
   defp package do
     [
-      name: :makeup_erlang,
+      name: :makeup_gleam,
       licenses: ["BSD-2-Clause"],
-      maintainers: ["Tiago Barroso <tmbb@campus.ul.pt>"],
       links: %{"GitHub" => @url}
     ]
   end
 
   def application do
     [
-      mod: {Makeup.Lexers.ErlangLexer.Application, []},
+      mod: {Makeup.Lexers.GleamLexer.Application, []},
       extra_applications: [:logger]
     ]
   end
@@ -55,8 +54,8 @@ defmodule MakeupErlang.Mixfile do
     end
 
     paths = Path.join(Mix.Project.build_path(), "lib/*/ebin")
-    args = ["MakeupErlang", @version, Mix.Project.compile_path()]
-    opts = ~w[--main Makeup.Lexers.ErlangLexer --source-ref v#{@version} --source-url #{@url}]
+    args = ["MakeupGleam", @version, Mix.Project.compile_path()]
+    opts = ~w[--main Makeup.Lexers.GleamLexer --source-ref v#{@version} --source-url #{@url}]
     System.cmd(ex_doc, args ++ ["--paths", paths] ++ opts)
     Mix.shell().info("Docs built successfully")
   end

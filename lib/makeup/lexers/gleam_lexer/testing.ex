@@ -1,6 +1,5 @@
-defmodule Makeup.Lexers.ErlangLexer.Testing do
-  # The tests need to be checked manually!!! (remove this line when they've been checked)
-  alias Makeup.Lexers.ErlangLexer
+defmodule Makeup.Lexers.GleamLexer.Testing do
+  alias Makeup.Lexers.GleamLexer
   alias Makeup.Lexer.Postprocess
 
   # This function has two purposes:
@@ -10,7 +9,7 @@ defmodule Makeup.Lexers.ErlangLexer.Testing do
   #    (iolists are hard to parse by a human)
   def lex(text) do
     text
-    |> ErlangLexer.lex(group_prefix: "group")
+    |> GleamLexer.lex(group_prefix: "group")
     |> Postprocess.token_values_to_binaries()
     |> Enum.map(fn {ttype, meta, value} -> {ttype, Map.delete(meta, :language), value} end)
   end
